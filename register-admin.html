@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register Admin | Ask AroundTally</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1 {
+      color: #1E90FF;
+    }
+    form {
+      background-color: #ffffff;
+      border: 1px solid #ccc;
+      padding: 20px;
+      width: 350px;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+    }
+    button {
+      background-color: #1E90FF;
+      color: white;
+      padding: 10px;
+      width: 100%;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .note {
+      margin-top: 20px;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Register as Admin</h1>
+  <form onsubmit="registerAdmin(); return false;">
+    <label for="admin-id">User ID</label>
+    <input type="text" id="admin-id" required>
+
+    <label for="admin-email">Email</label>
+    <input type="email" id="admin-email" required>
+
+    <label for="admin-password">Password</label>
+    <input type="password" id="admin-password" required>
+
+    <button type="submit">Register</button>
+  </form>
+  <div class="note">After registration, you will be redirected to the Admin login page.</div>
+
+  <script>
+    function registerAdmin() {
+      const id = document.getElementById('admin-id').value;
+      const email = document.getElementById('admin-email').value;
+      const password = document.getElementById('admin-password').value;
+
+      // Simulate registration
+      alert("Admin registered: " + id);
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>
