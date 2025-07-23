@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -80,14 +81,13 @@
       margin-top: 10px;
       font-size: 12px;
     }
+    .login-box .note a {
+      color: white;
+      text-decoration: underline;
+    }
     .error {
       color: red;
       font-size: 14px;
-    }
-    a {
-      color: white;
-      text-decoration: underline;
-      cursor: pointer;
     }
   </style>
 </head>
@@ -118,8 +118,8 @@
         <label for="admin-password">Password</label>
         <input type="password" id="admin-password">
         <button type="submit">Login</button>
-        <div class="note"><a onclick="alert('Redirect to register admin')">Register as Admin</a></div>
-        <div class="note"><a onclick="alert('Redirect to reset password')">Reset password</a></div>
+        <div class="note"><a href="register-admin.html">Register as Admin</a></div>
+        <div class="note"><a href="reset-password.html">Reset password</a></div>
         <div class="error" id="admin-error"></div>
       </form>
     </div>
