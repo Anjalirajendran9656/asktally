@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ask AroundTally</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    header {
+      background-color: #1E90FF;
+      color: white;
+      padding: 10px;
+      position: relative;
+      text-align: center;
+    }
+    header img {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      height: 40px;
+    }
+    header h1 {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 0;
+    }
+    header h2 {
+      font-size: 14px;
+      font-weight: bold;
+      margin: 0;
+    }
+    .body-section {
+      margin: 20px 0;
+      text-align: center;
+      color: black;
+    }
+    .bottom-section {
+      display: flex;
+      justify-content: space-between;
+    }
+    .login-box {
+      width: 45%;
+      background-color: #1E90FF;
+      color: white;
+      padding: 15px;
+      border-radius: 8px;
+    }
+    .login-box h3 {
+      text-align: center;
+    }
+    .login-box label {
+      display: block;
+      margin-top: 10px;
+    }
+    .login-box input {
+      width: 100%;
+      padding: 5px;
+      margin-top: 5px;
+    }
+    .login-box button {
+      margin-top: 10px;
+      width: 100%;
+      background-color: #87CEFA;
+      color: white;
+      font-weight: bold;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+    }
+    .login-box .note {
+      margin-top: 10px;
+      font-size: 12px;
+    }
+    .error {
+      color: red;
+      font-size: 14px;
+    }
+    a {
+      color: white;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/White_flower_icon.svg/2048px-White_flower_icon.svg.png" alt="Logo">
+      <h1>Ask AroundTally</h1>
+      <h2>your complete tally support</h2>
+    </header>
+    <div class="body-section">
+      <p>This website is completely for internal purpose only.</p>
+    </div>
+    <div class="bottom-section">
+      <form class="login-box" id="user-box" onsubmit="userLogin(); return false;">
+        <h3>User</h3>
+        <label for="user-id">User ID</label>
+        <input type="text" id="user-id">
+        <label for="user-password">Password</label>
+        <input type="password" id="user-password">
+        <button type="submit">Login</button>
+        <div class="error" id="user-error"></div>
+      </form>
+      <form class="login-box" id="admin-box" onsubmit="adminLogin(); return false;">
+        <h3>Admin</h3>
+        <label for="admin-id">User ID</label>
+        <input type="text" id="admin-id">
+        <label for="admin-password">Password</label>
+        <input type="password" id="admin-password">
+        <button type="submit">Login</button>
+        <div class="note"><a onclick="alert('Redirect to register admin')">Register as Admin</a></div>
+        <div class="note"><a onclick="alert('Redirect to reset password')">Reset password</a></div>
+        <div class="error" id="admin-error"></div>
+      </form>
+    </div>
+  </div>
+  <script>
+    function userLogin() {
+      const userId = document.getElementById('user-id').value;
+      const password = document.getElementById('user-password').value;
+      if (userId !== 'demo' || password !== 'demo') {
+        document.getElementById('user-error').textContent = 'Incorrect user id or Password';
+      } else {
+        document.getElementById('user-error').textContent = '';
+        alert('Redirecting to user window...');
+      }
+    }
+
+    function adminLogin() {
+      const adminId = document.getElementById('admin-id').value;
+      const password = document.getElementById('admin-password').value;
+      if (adminId !== 'admin' || password !== 'admin') {
+        document.getElementById('admin-error').textContent = 'No Access';
+      } else {
+        document.getElementById('admin-error').textContent = '';
+        alert('Redirecting to admin window...');
+      }
+    }
+  </script>
+</body>
+</html>
